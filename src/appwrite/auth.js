@@ -7,7 +7,7 @@ export class AuthService {
 
     constructor() {
         this.client
-            .setEndPoint(conf.appwriteUrl)
+            .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectID);
 
         this.account = new Account(this.client);
@@ -23,7 +23,7 @@ export class AuthService {
             );
             if (userAccount) {
                 //call another method to login
-                return this.login({email, password});
+                return this.login({ email, password });
             }
         } catch (error) {
             throw error;
@@ -52,8 +52,7 @@ export class AuthService {
         try {
             await this.account.deleteSessions();
         } catch (error) {
-            console.log("Appwrite service :: logout :: error", error)
-          
+            console.log("Appwrite service :: logout :: error", error);
         }
     }
 }
@@ -61,14 +60,3 @@ export class AuthService {
 const authService = new AuthService();
 
 export default authService;
-
-
-
-
-
-
-
-
-
-
-
