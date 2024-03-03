@@ -10,5 +10,4 @@ export {
     Container,
     LogoutBtn,
     Logo
-
 }
