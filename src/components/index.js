@@ -3,11 +3,13 @@ import Footer from "./Footer/Footer";
 import Container from "postcss/lib/container";
 import LogoutBtn from "./Header/LogoutBtn";
 import Logo from './Logo'
+import RTE from "./RTE";
 
 export {
     Header,
     Footer,
     Container,
     LogoutBtn,
-    Logo
+    Logo,
+    RTE
 }
