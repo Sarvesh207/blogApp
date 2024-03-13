@@ -18,7 +18,7 @@ const Header = () => {
         },
         {
             name: "login",
-            slog: "/login",
+            slug: "/login",
             active: !authStatus,
         },
         {
