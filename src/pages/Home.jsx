@@ -33,18 +33,23 @@ const Home = () => {
   return (
     <div className="w-full py-8">
       <Container>
-        <div className="flex flex-wrap">
-          {posts.map((post) => 
-
-            (<div key={post.$id} className="p-2 w-1/4">
+        <hr className="bg-white h-[#2px]" />
+        <div className="flex justify-center items-center">
+          <h1 className="text-[160px] font-bold tracking-wide">THE BLOG</h1>
+        </div>
+        <hr className="bg-white h-[#2px]" />
+      </Container>
+      <Container>
+        <div className="flex flex-wrap mt-5">
+          {posts.map((post) => (
+            <div key={post.$id} className="p-2 w-1/4">
               <PostCard
                 id={post.$id}
                 title={post.title}
                 featuredImage={post.featuredImage}
               />
-            </div>)
-          )}
-
+            </div>
+          ))}
         </div>
       </Container>
     </div>

@@ -39,7 +39,7 @@ const Header = () => {
         },
     ];
     return (
-        <header className="py-3 shadow bg-gray-500">
+        <header className="py-3 shadow bg-[#090D1F] text-[#FFFFFF]">
             <Container>
                 <nav className="flex">
                     <div className="mr-4">
@@ -67,6 +67,7 @@ const Header = () => {
                         )}
                     </ul>
                 </nav>
+                
             </Container>
         </header>
     );
