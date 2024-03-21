@@ -4,10 +4,10 @@ import authService from "../../appwrite/auth";
 import { logout } from "../../store/authSlice";
 
 const LogoutBtn = () => {
-    console.log(authService);
+    
     const dispatch = useDispatch();
     const logOutHandler = () => {
-        console.log("I am working");
+        
         authService
             .logout()
             .then(() => {

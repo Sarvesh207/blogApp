@@ -18,10 +18,11 @@ function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
+    
 
     const submit = async (data) => {
         if (post) {
-            data.image[0] ? appwriteService.uploadFile(data.image) : null;
+            const file = data.image[0] ?await  appwriteService.uploadFile(data.image) : null;
 
             if (file) {
                 appwriteService.deleteFile(post.featuredImage);
@@ -31,6 +32,8 @@ function PostForm({ post }) {
                 ...data,
                 featuredImage: file ? file.$id : undefined,
             });
+
+
 
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
@@ -79,6 +82,7 @@ function PostForm({ post }) {
             subscription.unsubscribe();
         };
     }, [watch, slugTransform, setValue]);
+
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             <div className="w-2/3 px-2">

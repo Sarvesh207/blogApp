@@ -14,9 +14,9 @@ import Input from "./Input.jsx"
 import Select from "./Select.jsx"
 
 export {
+    Button,
     Input,
     Select,
-    Button,
     Header,
     Footer,
     Container,
