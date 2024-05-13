@@ -11,7 +11,7 @@ const PostCard = ({ title, id, featuredImage }) => {
           <img
             src={appwriteService.getFilePreview(featuredImage)}
             alt={title}
-            className="rounded-xl w-full"
+            className="rounded-xl  w-[300px] h-[250px] object-fit  "
           />
         </div>
       </div>
