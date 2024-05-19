@@ -39,7 +39,7 @@ const Header = () => {
         },
     ];
     return (
-        <header className="py-3 shadow bg-[#343434] text-[#FFFFFF]">
+        <header className="py-5 shadow bg-[#000000] text-[#48937E]  text-lg font-bold">
             <Container>
                 <nav className="flex">
                     <div className="mr-4">
@@ -47,13 +47,13 @@ const Header = () => {
                             <Logo width="70px" />
                         </Link>
                     </div>
-                    <ul className="flex ml-auto">
+                    <ul className="flex ml-auto ">
                         {navItems.map((item) =>
                             item.active ? (
                                 <li key={item.name}>
                                     <button
                                         onClick={() => navigate(item.slug)}
-                                        className="inline-bock px-6 py-2 duration-200 hover:text-slate-600 hover:bg-blue-100 rounded-full"
+                                        className="inline-bock px-6 py-2 duration-200 hover:text-slate-600  hover:text-[#000000] hover:bg-[#48937E] rounded-full"
                                     >
                                         {item.name}
                                     </button>

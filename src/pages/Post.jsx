@@ -32,38 +32,52 @@ export default function Post() {
     });
   };
 
+  const addHighlightClass = (content) => {
+    return content.replace(
+      /<code>/g,
+      '<code class="bg-[#171717] p-1 rounded text-red-500 font-mono">'
+    );
+  };
+
   return post ? (
-    <div className="">
-      <Container>
-        <div className=" text-center mb-6 ">
-          <h1 className="sm:text-[16px] sm:font-[300] lg:text-[32px] lg:font-[700] leading-[40px]"> {post.title}</h1>
-        </div>
+    <div className="lg:w-[960px] w-full mx-auto px-4">
+      <div className=" text-center mb-6 ">
+        <h1 className="sm:text-[16px] sm:font-[300] lg:text-[32px] lg:font-[700] leading-[40px]">
+          {" "}
+          {post.title}
+        </h1>
+      </div>
+      <div>
         <div>
-            <div><img src="" alt="" /></div>
+          <img src="" alt="" />
         </div>
-        <div className="w-full flex justify-center mb-4 relative  rounded-xl ">
-          <img
-            src={appwriteService.getFilePreview(post.featuredImage)}
-            alt={post.title}
-            className="rounded-xl sm:w-[300px] sm:h-[200px] lg:w-[960px] lg:h-[548px]"
-          />
+      </div>
+      <div className="w-full flex justify-center mb-4 relative  rounded-xl ">
+        <img
+          src={appwriteService.getFilePreview(post.featuredImage)}
+          alt={post.title}
+          className="rounded-xl sm:w-[300px] sm:h-[200px] lg:w-[960px] lg:h-[548px]"
+        />
 
-          {isAuthor && (
-            <div className="absolute right-6 top-6">
-              <Link to={`/edit-post/${post.$id}`}>
-                <Button bgColor="bg-green-500" className="mr-3">
-                  Edit
-                </Button>
-              </Link>
-              <Button bgColor="bg-red-500" onClick={deletePost}>
-                Delete
+        {isAuthor && (
+          <div className="absolute right-6 top-6">
+            <Link to={`/edit-post/${post.$id}`}>
+              <Button bgColor="bg-green-500" className="mr-3">
+                Edit
               </Button>
-            </div>
-          )} 
-        </div>
+            </Link>
+            <Button bgColor="bg-red-500" onClick={deletePost}>
+              Delete
+            </Button>
+          </div>
+        )}
+      </div>
 
-        <div className="browser-css ">{parse(post.content)}</div>
-      </Container>
+      <div className="browser-css ">{parse(post.content)}</div>
+
+      <div className="browser-css">
+        {parse(addHighlightClass(post.content))}
+      </div>
     </div>
   ) : null;
 }
